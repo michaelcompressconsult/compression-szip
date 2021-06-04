@@ -1,0 +1,23 @@
+Szip uses a limited order Sort transform. This transformation is related to
+the Burrows-Wheeler transformation used in blocksorting compression methods.
+See http://www.compressconsult.com/st/ for more information.
+The difference is a fast, deterministic behaviour in time at some compression
+loss. And you could easily do it in hardware. 
+
+As next step it uses a probability model for blocksorted files.
+
+The last step is entropy encoding using a range coder. This coder is based on
+an article by G.N.N. Martin published in 1979 and is belived to be patent-free.
+More info, including a GNU GPL sourcecode, can be found on
+http://www.compressconsult.com/rangecoder/
+Moving to github and changing license to Apache2.0 is in progress.
+
+
+The compressed format supports multiple files including creation, modification
+and accesstime, owner, group and protection. However the *program* does not
+support it; if you want to contribute code doing that you are welcome.
+
+
+further questions or bug reports?
+look at the webpage http://www.compressconsult.com/szip/
+contact michael@compressconsult.com
